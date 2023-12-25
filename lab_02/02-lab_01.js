@@ -13,6 +13,7 @@ app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res)=> res.render('home', {title: 'Home Page', message: 'Welcome to our website'}))
 app.get('/about', (req, res)=> res.render('about', {title: 'About us', message: 'Learn more about...'}))
+app.get('/product', (req, res)=> res.render('products', {products}))
 
 
 //custom 404 page
