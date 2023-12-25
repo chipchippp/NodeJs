@@ -1,0 +1,38 @@
+<h2>Tell Us About ...</h2>
+
+<form action="/process-contact" method="post">
+<div>
+    <label for="">Your name:
+        <input type="text" name="name">
+    </label>
+</div>
+<br>
+<div>
+    <label for="">Your email:
+        <input type="email" name="email">
+    </label>
+</div>
+<br>
+<div>
+    <label for="">Simulator error:
+        <input type="checkbox" name="simulateError">
+    </label>
+</div>
+<br>
+<div>
+    <label for="">Use Ajax?:
+        <input type="checkbox" name="useAjax">
+    </label>
+</div>
+<br>
+<div>
+    <button type="submit">Submit</button>
+</div>
+</form>
+<script>
+    const api = {
+        post(path, data){
+            const body = typeof data === 'object' ? JSON.stringify(data) : data
+        }
+    }
+</script>
