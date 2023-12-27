@@ -1,14 +1,14 @@
 <h1>Feedback</h1>
 <form action="/process-feedback" method="post">
 <div>
-    <label for="">YES
-        <input type="checkbox" name="yes">
+    <label for="">yes
+        <input type="radio" name="yes">
     </label>
 </div>
 <br>
 <div>
-    <label for="">NO
-        <input type="checkbox" name="no">
+    <label for="">no
+        <input type="radio" name="no">
     </label>
 </div>
 <br>
@@ -36,7 +36,7 @@
     //
     document.querySelector('form').addEventListener('submit', evt => {
         const formdata = new FormData(evt.target)
-        if(!formdata.get('useAjax')) return
+        if(!formdata.get('no')) return
         evt.preventDefault()
         const data = {
             yes: formdata.get('yes'),
