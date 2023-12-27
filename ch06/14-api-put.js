@@ -29,5 +29,6 @@ app.use('*', (req, res) => res.send (
     `GET /api/tours`
 ))
 
-const port = process.env.PORT || 3000
-app.listen(port, ()=> console.log(`\nnavigate to http://localhost:${port}\n`))
+const port = process.env.POST || 3000
+app.listen(port, () => console.log(
+    `Server started on http://localhost:${port}/api/tour\n`))
