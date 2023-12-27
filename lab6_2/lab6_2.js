@@ -23,11 +23,20 @@ app.get('*', (req, res) =>{
 })
 
 app.post('/process-feedback', (req, res) =>{
-    console.log(req.body.yes);
-    if (req.body.yes == 'yes') {
-        res.redirect(303, '/thank-you')
-    } else {
-        res.redirect(303, '/sorry')
+    try{
+        if(req.body.no) throw new Error("error saving contact!")
+        console.log(`contact from ${req.body.yes} <${req.body.email}`)
+    res.format({
+        'text/html': ()=> res.redirect(303, '/thank-you'),
+        'application/json' : () => res.json({success: true}),
+    })
+    } catch (err){
+        console.error(`error processing contact form ${req.body.yes}`)
+        res.format({
+           'text/html': ()=> res.redirect(303, '/sorry'),
+           'application/json' : () => res.status(500).json({
+               error: 'error saving contact information'}),
+           })
     }
 })
 
