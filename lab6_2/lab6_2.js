@@ -25,7 +25,7 @@ app.get('*', (req, res) =>{
 app.post('/process-feedback', (req, res) =>{
     try{
         if(req.body.no) throw new Error("error saving contact!")
-        console.log(`contact from ${req.body.yes} <${req.body.email}`)
+        console.log(`contact from ${req.body.yes}`)
     res.format({
         'text/html': ()=> res.redirect(303, '/thank-you'),
         'application/json' : () => res.json({success: true}),
