@@ -2,7 +2,7 @@ const express = require('express')
 const app = express() 
 const tours = [
     { id: 0, name: 'Hood River', price: 99.99},
-    { id: 1, name: 'Oregon Coast', price: 149.99},
+    { id: 1, name: 'Oregon Coast', price: 149.9},
 ]
 app.get('/api/tours', (req, res) => {
     const toursXml = '<?xml version = "1.0"?><tours>' +

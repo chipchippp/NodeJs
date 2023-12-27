@@ -20,7 +20,7 @@ app.get('*', (req, res)=>{
 
 app.post('/process-contact', (req, res)=>{
     console.log(`received contact from ${req.body.name} <${req.body.email}>`)
-    res.redirect(303, 'thank-you')
+    res.redirect(303, '/thank-you')
 })
 
 const port = process.env.POST || 3000

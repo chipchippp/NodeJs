@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars').engine;
 const app = express()
 
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main',
+    defaultLayout: 'custom',
 }))
 app.set('view engine', 'handlebars')
 
