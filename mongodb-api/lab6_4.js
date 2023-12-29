@@ -80,7 +80,7 @@ app.put('/api/products/:id', async(req, res) =>{
 // Delete
 app.delete('/api/products/:id', async(req, res) =>{
     try{
-        const deletedProduct = await Product.findByIdAndDelete(req.params.id,);
+        const deletedProduct = await Product.findByIdAndDelete(req.params.id);
         if(!deletedProduct){
             return res.status(404).json({ error: 'Product not found'})
         }
