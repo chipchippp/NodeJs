@@ -1,6 +1,7 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
+
 
 const app = express()
 const port = 3000;
@@ -23,7 +24,7 @@ const BlogSchema = new mongoose.Schema({
 })
 
 const Blog = mongoose.model('Blog', BlogSchema);
-// cau hinh bodyParser
+//sử dụng body-parser để parse data từ request
 app.use(bodyParser.json());
 
 // route getall
