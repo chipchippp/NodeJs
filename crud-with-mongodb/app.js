@@ -4,7 +4,6 @@ const app = express();
 const port = 3000;
 
 // middleware
-
 app.use(express.json());
 app.use("/api/blogs", blogRouter);
 
@@ -31,6 +30,3 @@ mongoose.connect('mongodb://localhost/crud')
     console.error('Lỗi kết nối đến MongoDB:', err);
   });
 module.exports = app;
-
-// app.listen(port, () =>
-// console.log(`Server started on http://localhost:${port}/api/blogs`))

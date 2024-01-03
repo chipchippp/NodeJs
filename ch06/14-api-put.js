@@ -10,7 +10,7 @@ const tours = [
     {id:1, name: 'Oregon Coast', price: 149.95},
 ]
 
-app.get('/api/tour', (req,res) => res.json(tours))
+app.get('/api/tours', (req,res) => res.json(tours))
 
 app.put('/api/tour/:id', (req, res) => {
    const p = tours.find(p => p.id === parseInt(req.params.id))
@@ -31,4 +31,4 @@ app.use('*', (req, res) => res.send (
 
 const port = process.env.POST || 3000
 app.listen(port, () => console.log(
-    `Server started on http://localhost:${port}/api/tour\n`))
+    `Server started on http://localhost:${port}/api/tours\n`))
