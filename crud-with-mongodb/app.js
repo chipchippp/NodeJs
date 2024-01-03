@@ -8,9 +8,9 @@ const port = 3000;
 app.use(express.json());
 app.use("/api/blogs", blogRouter);
 
-// app.listen(3001, ()=>{
-//     console.log("server is...")
-// })
+app.listen(3001, ()=>{
+    console.log(`Server started on http://localhost:3001/api/blogs`)
+})
 
 const mongoose = require('mongoose')
 //
@@ -26,12 +26,11 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/crud')
   .then(() => {
     console.log('Đã kết nối đến MongoDB');
-    // Phần còn lại của mã của bạn...
   })
   .catch((err) => {
     console.error('Lỗi kết nối đến MongoDB:', err);
   });
 module.exports = app;
 
-app.listen(port, () =>
-console.log(`Server started on http://localhost:${port}/api/blogs`))
+// app.listen(port, () =>
+// console.log(`Server started on http://localhost:${port}/api/blogs`))
