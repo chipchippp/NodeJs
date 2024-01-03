@@ -12,7 +12,7 @@ app.listen(3001, ()=>{
 })
 
 const mongoose = require('mongoose')
-//
+
 // mongoose.connect("mongodb://localhost:27017/crud",
 //     (err) => {
 //         if(err){
@@ -22,7 +22,7 @@ const mongoose = require('mongoose')
 //         }
 //     }
 // );
-mongoose.connect('mongodb://localhost/crud')
+mongoose.connect('mongodb://localhost:27017/crud')
   .then(() => {
     console.log('Đã kết nối đến MongoDB');
   })
