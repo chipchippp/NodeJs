@@ -1,7 +1,7 @@
 const express = require('express')
-const blogRouter = require('./routes/BlogRoutes')
+const blogRouter = require('../routes/BlogRoutes')
 const app = express();
-const port = 3000;
+
 
 // middleware
 app.use(express.json());
@@ -13,20 +13,6 @@ app.listen(3001, ()=>{
 
 const mongoose = require('mongoose')
 
-// mongoose.connect("mongodb://localhost:27017/crud",
-//     (err) => {
-//         if(err){
-//             console.log(err);
-//         } else{
-//             console.log("Connected to MongoDB");
-//         }
-//     }
-// );
-mongoose.connect('mongodb://localhost:27017/crud')
-  .then(() => {
-    console.log('Đã kết nối đến MongoDB');
-  })
-  .catch((err) => {
-    console.error('Lỗi kết nối đến MongoDB:', err);
-  });
+mongoose.connect(process.env.MONGODB_URI ||  "mongodb://localhost:27017/crud");
+
 module.exports = app;
